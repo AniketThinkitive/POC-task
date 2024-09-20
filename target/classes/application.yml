@@ -1,0 +1,35 @@
+spring:
+  threads:
+    virtual:
+      enabled: true
+#  datasource:
+#    url: jdbc:mysql://localhost:3306/yourdatabase
+#    username: yourusername
+#    password: yourpassword
+#  jpa:
+#    hibernate:
+#      ddl-auto: update
+joinfaces:
+  primefaces:
+    theme: vela
+  faces:
+    project-stage: Production
+    facelets-libraries: /tags/tags.taglib.xml
+tomcat:
+  version: 10.1.28
+jetty:
+  version: 12.0.12
+undertow:
+  version: 2.3.13.Final
+application-users:
+  users-credentials:
+    - username: persapiens
+      password: 123
+      authorities: ROLE_ADMIN
+    - username: nyilmaz
+      password: qwe
+      authorities: ROLE_USER
+
+
+
+

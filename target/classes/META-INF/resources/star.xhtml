@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us"
+      xmlns:h="jakarta.faces.html"
+      xmlns:f="jakarta.faces.core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:pe="http://primefaces.org/ui/extensions">
+
+<f:view contentType="text/html">
+    <h:head>
+        <title>.:: Star Form ::.</title>
+        <meta content='text/html; charset=UTF-8' http-equiv="Content-Type" />
+        <link href="#{resource['images/favicon.ico']}" rel="shortcut icon"/>
+        <h:outputStylesheet library="css" name="example.css" />
+    </h:head>
+
+    <h:body>
+        <pe:layout fullPage="true">
+            <pe:layoutPane id="mainLayoutPane" position="center">
+                <h:form prependId="false">
+                    <div id="mainDiv" class="ui-fluid center">
+                        <p:panelGrid columns="2" layout="grid">
+                             <h:outputText value="Name:" />
+                            <p:inputText id="name" value="#{starBean.star.name}" />
+
+                            <h:outputText value="Mass (in solar masses):" />
+                            <p:inputText id="mass" value="#{starBean.star.mass}" />
+
+                            <h:outputText value="Size (in solar radii):" />
+                            <p:inputText id="size" value="#{starBean.star.size}" />
+
+                            <h:outputText value="Temperature (in Kelvin):" />
+                            <p:inputText id="temperature" value="#{starBean.star.temperature}" />
+
+                            <h:outputText value="Luminosity (in solar luminosities):" />
+                            <p:inputText id="luminosity" value="#{starBean.star.luminosity}" />
+
+                        </p:panelGrid>
+                        <p:commandButton id="submit" value="Submit" action="#{starBean.submit}" />
+                    </div>
+                </h:form>
+            </pe:layoutPane>
+        </pe:layout>
+    </h:body>
+</f:view>
+</html>

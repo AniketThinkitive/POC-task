@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us"
+      xmlns:h="jakarta.faces.html"
+      xmlns:f="jakarta.faces.core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:pe="http://primefaces.org/ui/extensions">
+
+<f:view contentType="text/html">
+    <h:head>
+        <title>.:: Galaxy Form ::.</title>
+        <meta content='text/html; charset=UTF-8' http-equiv="Content-Type" />
+        <link href="#{resource['images/favicon.ico']}" rel="shortcut icon"/>
+        <h:outputStylesheet library="css" name="example.css" />
+    </h:head>
+
+    <h:body>
+        <pe:layout fullPage="true">
+            <pe:layoutPane id="mainLayoutPane" position="center">
+                <h:form prependId="false">
+                    <div id="mainDiv" class="ui-fluid center">
+                        <p:panelGrid columns="2" layout="grid">
+                            <!-- Name field -->
+                            <h:outputText value="Galaxy Name:" />
+                            <p:inputText id="galaxyName" value="#{galaxyBean.galaxy.name}" required="true" />
+
+                            <!-- Type dropdown -->
+                            <h:outputText value="Galaxy Type:" />
+                            <p:selectOneMenu id="galaxyType" value="#{galaxyBean.galaxy.type}" required="true">
+                                <f:selectItem itemLabel="Select Type" itemValue="" />
+                                <f:selectItem itemLabel="Elliptical" itemValue="Elliptical" />
+                                <f:selectItem itemLabel="Lenticular" itemValue="Lenticular" />
+                                <f:selectItem itemLabel="Spiral" itemValue="Spiral" />
+                                <f:selectItem itemLabel="Irregular" itemValue="Irregular" />
+                            </p:selectOneMenu>
+
+                            <!-- Age input -->
+                            <h:outputText value="Galaxy Age:" />
+                            <div>
+                                <p:inputText id="galaxyAge" value="#{galaxyBean.galaxy.age}" required="true" size="5">
+                                    <f:convertNumber maxFractionDigits="2" />
+                                </p:inputText>
+                                <p:selectOneMenu id="ageUnit" value="#{galaxyBean.galaxy.ageUnit}">
+                                    <f:selectItem itemLabel="Billion (B)" itemValue="B" />
+                                    <f:selectItem itemLabel="Million (M)" itemValue="M" />
+                                </p:selectOneMenu>
+                            </div>
+
+                        </p:panelGrid>
+                        <!-- Submit Button -->
+                        <p:commandButton id="submit" value="Submit" action="#{galaxyBean.submit}" />
+                    </div>
+                </h:form>
+            </pe:layoutPane>
+        </pe:layout>
+    </h:body>
+</f:view>
+</html>
