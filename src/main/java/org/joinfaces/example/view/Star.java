@@ -10,6 +10,8 @@ public class Star {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+
     private String name;
     private String starClass;
     private double mass;
@@ -74,5 +76,8 @@ public class Star {
     public void setLuminosity(double luminosity) {
         this.luminosity = luminosity;
     }
+
+
+
 }
 
