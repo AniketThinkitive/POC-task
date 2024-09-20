@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us"
+      xmlns:h="jakarta.faces.html"
+      xmlns:f="jakarta.faces.core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:pe="http://primefaces.org/ui/extensions">
+
+<f:view contentType="text/html">
+    <h:head>
+        <title>.:: Star Form ::.</title>
+        <meta content='text/html; charset=UTF-8' http-equiv="Content-Type" />
+        <link href="#{resource['images/favicon.ico']}" rel="shortcut icon"/>
+        <h:outputStylesheet library="css" name="example.css" />
+    </h:head>
+
+    <h:body>
+        <pe:layout fullPage="true">
+            <pe:layoutPane id="mainLayoutPane" position="center">
+                <h:form prependId="false">
+                    <div id="mainDiv" class="ui-fluid center">
+                        <p:panelGrid columns="2" layout="grid">
+                            <h:outputText value="Name:" />
+                            <p:inputText id="name" value="#{starBean.star.name}" />
+
+                            <h:outputText value="Mass (in solar masses):" />
+                            <p:inputText id="mass" value="#{starBean.star.mass}" />
+
+                            <h:outputText value="Size (in solar radii):" />
+                            <p:inputText id="size" value="#{starBean.star.size}" />
+
+                            <h:outputText value="Temperature (in Kelvin):" />
+                            <p:inputText id="temperature" value="#{starBean.star.temperature}" />
+
+                            <h:outputText value="Luminosity (in solar luminosities):" />
+                            <p:inputText id="luminosity" value="#{starBean.star.luminosity}" />
+
+                        </p:panelGrid>
+                        <p:commandButton id="submit" value="Submit" action="#{starBean.submit}" />
+                    </div>
+                </h:form>
+            </pe:layoutPane>
+        </pe:layout>
+    </h:body>
+</f:view>
+</html>
+
+
+
+
+<!--&lt;!&ndash;<?xml version="1.0" encoding="UTF-8"?>&ndash;&gt;-->
+<!--&lt;!&ndash;<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">&ndash;&gt;-->
+<!--&lt;!&ndash;<html lang="en-us"&ndash;&gt;-->
+<!--&lt;!&ndash;      xmlns:h="jakarta.faces.html"&ndash;&gt;-->
+<!--&lt;!&ndash;      xmlns:f="jakarta.faces.core"&ndash;&gt;-->
+<!--&lt;!&ndash;      xmlns:p="http://primefaces.org/ui"&ndash;&gt;-->
+<!--&lt;!&ndash;      xmlns:pe="http://primefaces.org/ui/extensions"&ndash;&gt;-->
+<!--&lt;!&ndash;      xmlns:ui="http://java.sun.com/jsf/facelets">&ndash;&gt;-->
+
+<!--&lt;!&ndash;<f:view contentType="text/html">&ndash;&gt;-->
+<!--&lt;!&ndash;    <h:head>&ndash;&gt;-->
+<!--&lt;!&ndash;        <title>.:: Forms ::.</title>&ndash;&gt;-->
+<!--&lt;!&ndash;        <meta content='text/html; charset=UTF-8' http-equiv="Content-Type" />&ndash;&gt;-->
+<!--&lt;!&ndash;        <link href="#{resource['images/favicon.ico']}" rel="shortcut icon"/>&ndash;&gt;-->
+<!--&lt;!&ndash;        <h:outputStylesheet library="css" name="example.css" />&ndash;&gt;-->
+<!--&lt;!&ndash;    </h:head>&ndash;&gt;-->
+
+<!--&lt;!&ndash;    <h:body>&ndash;&gt;-->
+<!--&lt;!&ndash;        <pe:layout fullPage="true">&ndash;&gt;-->
+<!--&lt;!&ndash;            <pe:layoutPane id="mainLayoutPaneParent" position="center">&ndash;&gt;-->
+<!--&lt;!&ndash;                <h:form prependId="false">&ndash;&gt;-->
+<!--&lt;!&ndash;                    <p:tabView id="tabView" effect="fade">&ndash;&gt;-->
+<!--&lt;!&ndash;                        &lt;!&ndash; Star Form Tab &ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                        <p:tab title="Star Form">&ndash;&gt;-->
+<!--&lt;!&ndash;                            <h:panelGroup id="panelGroupStar">&ndash;&gt;-->
+<!--&lt;!&ndash;                                &lt;!&ndash; Include the Star Form here &ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                                <ui:include src="star.xhtml" />&ndash;&gt;-->
+<!--&lt;!&ndash;                            </h:panelGroup>&ndash;&gt;-->
+<!--&lt;!&ndash;                        </p:tab>&ndash;&gt;-->
+
+<!--&lt;!&ndash;                        &lt;!&ndash; Galaxy Form Tab &ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                        <p:tab title="Galaxy Form">&ndash;&gt;-->
+<!--&lt;!&ndash;                            <h:panelGroup id="panelGroupGalaxy">&ndash;&gt;-->
+<!--&lt;!&ndash;                                &lt;!&ndash; Include the Galaxy Form here &ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                                <ui:include src="galaxy.xhtml" />&ndash;&gt;-->
+<!--&lt;!&ndash;                            </h:panelGroup>&ndash;&gt;-->
+<!--&lt;!&ndash;                        </p:tab>&ndash;&gt;-->
+<!--&lt;!&ndash;                    </p:tabView>&ndash;&gt;-->
+<!--&lt;!&ndash;                </h:form>&ndash;&gt;-->
+<!--&lt;!&ndash;            </pe:layoutPane>&ndash;&gt;-->
+<!--&lt;!&ndash;        </pe:layout>&ndash;&gt;-->
+<!--&lt;!&ndash;    </h:body>&ndash;&gt;-->
+<!--&lt;!&ndash;</f:view>&ndash;&gt;-->
+<!--&lt;!&ndash;</html>&ndash;&gt;-->
+
+<!--<?xml version="1.0" encoding="UTF-8"?>-->
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
+<!--<html lang="en-us"-->
+<!--      xmlns:h="jakarta.faces.html"-->
+<!--      xmlns:f="jakarta.faces.core"-->
+<!--      xmlns:p="http://primefaces.org/ui"-->
+<!--      xmlns:pe="http://primefaces.org/ui/extensions"-->
+<!--      xmlns:ui="http://java.sun.com/jsf/facelets">-->
+
+<!--<f:view contentType="text/html">-->
+<!--    <h:head>-->
+<!--        <title>.:: Forms ::.</title>-->
+<!--        <meta content='text/html; charset=UTF-8' http-equiv="Content-Type" />-->
+<!--        <link href="#{resource['images/favicon.ico']}" rel="shortcut icon"/>-->
+<!--        <h:outputStylesheet library="css" name="example.css" />-->
+<!--    </h:head>-->
+
+<!--    <h:body>-->
+<!--        <pe:layout fullPage="true">-->
+<!--            <pe:layoutPane id="mainLayoutPaneParent" position="center">-->
+<!--                <h:form prependId="false">-->
+<!--                    <p:tabView id="tabView" effect="fade">-->
+<!--                        &lt;!&ndash; Star Form Tab &ndash;&gt;-->
+<!--                        <p:tab title="Star Form">-->
+<!--                            <h:panelGroup id="panelGroupStar">-->
+<!--                                &lt;!&ndash; Include the Star Form here &ndash;&gt;-->
+<!--                                <ui:include src="star.xhtml" />-->
+<!--                            </h:panelGroup>-->
+<!--                        </p:tab>-->
+
+<!--                        &lt;!&ndash; Galaxy Form Tab &ndash;&gt;-->
+<!--                        <p:tab title="Galaxy Form">-->
+<!--                            <h:panelGroup id="panelGroupGalaxy">-->
+<!--                                &lt;!&ndash; Include the Galaxy Form here &ndash;&gt;-->
+<!--                                <ui:include src="galaxies.xhtml" />-->
+<!--                            </h:panelGroup>-->
+<!--                        </p:tab>-->
+<!--                    </p:tabView>-->
+<!--                </h:form>-->
+<!--            </pe:layoutPane>-->
+<!--        </pe:layout>-->
+<!--    </h:body>-->
+<!--</f:view>-->
+<!--</html>-->
+

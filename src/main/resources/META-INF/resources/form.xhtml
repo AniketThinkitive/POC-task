@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us"
+      xmlns:h="jakarta.faces.html"
+      xmlns:f="jakarta.faces.core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:pe="http://primefaces.org/ui/extensions"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<f:view contentType="text/html">
+    <h:head>
+        <title>.:: Forms ::.</title>
+        <meta content='text/html; charset=UTF-8' http-equiv="Content-Type" />
+        <link href="#{resource['images/favicon.ico']}" rel="shortcut icon"/>
+        <h:outputStylesheet library="css" name="example.css" />
+    </h:head>
+
+    <h:body>
+        <pe:layout fullPage="true">
+            <pe:layoutPane id="mainLayoutPane" position="center">
+                <h:form prependId="false">
+                    <p:tabView id="tabView" effect="fade">
+                        <!-- Star Form Tab -->
+                        <p:tab title="Star Form">
+                            <h:panelGroup id="panelGroupStar">
+                                <!-- Include the Star Form here -->
+                                <ui:include src="star.xhtml" />
+                            </h:panelGroup>
+                        </p:tab>
+
+                        <!-- Galaxy Form Tab -->
+                        <p:tab title="Galaxy Form">
+                            <h:panelGroup id="panelGroupGalaxy">
+                                <!-- Include the Galaxy Form here -->
+                                <ui:include src="galaxies.xhtml" />
+                            </h:panelGroup>
+                        </p:tab>
+                    </p:tabView>
+                </h:form>
+            </pe:layoutPane>
+        </pe:layout>
+    </h:body>
+</f:view>
+</html>
+
